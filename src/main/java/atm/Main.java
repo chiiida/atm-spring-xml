@@ -8,8 +8,7 @@ public class Main {
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("bean.xml");
 
-        ATM atm = context.getBean(ATM.class);
-        AtmUI atmUI = new AtmUI(atm);
+        AtmUI atmUI= context.getBean("atmUI", AtmUI.class);
         atmUI.run();
     }
 }
